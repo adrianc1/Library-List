@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/b293c74bcc.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Library Project</title>
+</head>
+<body>
+    
+    <!-- Library table and rows -->
+    
+    <main class="" id="main">
+        <header class="header">My Library List</header>
+        <div class="table-btn-container">
+            <table id="my-table">
+                <thead>
+                    <tr class="book-title-column">
+                        <th class="title-header">Title</th>
+                        <th class="author-header">Author</th>
+                        <th class="pages-header"># of Pages</th>
+                        <th class="read-header">Read?</th>
+                        <th class="options-header">Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    <!-- add content rows dynamically here -->
+                </tbody>
+            </table>
+            <!--Add new Book Button -->
+            <div class="add-btn-container">
+                <button type="submit" id='show-form' onclick="showForm()"> Show Form To Add Book</button>
+                
+                
+            </div>
+        </div>
+        <form action="post" class="form-container">
+            
+            <div class="info-container">
+                <fieldset class="title-fieldset">
+                    <label for="input-title">Book Title</label>
+                    <input type="text" id="input-title">
+                </fieldset>
+                <fieldset class="author-fieldset">
+            
+                    <label for="input-author">Author</label>
+                    <input type="text" id="input-author">
+                </fieldset>
+                <fieldset class="pages-fieldset">
+                    <label for="input-pages">No. Of Pages</label>
+                    <input type="number" id="input-pages">
+                </fieldset>
+                   <fieldset>
+                    <label>Have Read?</label>
+                    <div class="radio-container">
+                        <label for="input-read-yes">Yes</label>
+                        <input type="radio" id="input-read-yes" name="input-read" value="yes" class="choice">
+                        <label for="input-read-no">No</label>
+                        <input type="radio" id="input-read-no" name="input-read" value="no" class="choice">
+                    </div>
+                   </fieldset>
+            </div>
+            
+               <div class="btn-container">
+                <button type="submit" id="add-new-book">Add New Book</button>
+               </div>
+               
+        </form>
+    </main>
+
+
+
+    <script src="main.js"></script>
+</body>
+</html>

@@ -20,9 +20,7 @@
     height: 100vh;
     overflow: none;
     display: flex;
-    flex-direction: column;
-    border: 2px solid green;
-    
+    flex-direction: column;    
 }
 
 /* header styling  */
@@ -32,6 +30,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px 0;
     height: 100%;
     width: 100%;
     font-size: var(--header-font-size);
@@ -74,6 +73,10 @@ td {
     border-bottom: 3px solid var(--border-colors);
 }
 
+.yo {
+    content: "shiiitt";
+}
+
 tr:hover {
     background-color: cornflowerblue;
 }
@@ -88,7 +91,7 @@ form {
     flex:2;
     height: 100%;
     width: 100%;
-    display: flex;
+    display: none;
     flex-direction: column;
 }
 .info-container {
@@ -111,11 +114,11 @@ fieldset > label {
 }
 
 fieldset {
-display: flex;
-flex-direction: column;
-justify-content: space-around;
-outline: none;
-border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    outline: none;
+    border: none;
 }
 
 input {
@@ -127,13 +130,23 @@ input {
 }
 
 
-
 /* button styling */
 .add-btn-container {
-    margin-top: 10%;
+    margin-top: 5%;
     display: flex;
     text-align: center;
 }
+
+.update-btn {
+    background-color: aliceblue;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 15px;
+    color: var(--font-color);
+    font-size: 1rem;
+}
+
+/* show form */
 #show-form {
     display: flex;
     outline: none;

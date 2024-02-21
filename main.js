@@ -1,15 +1,16 @@
+/* variable list */
 const myLibrary = [];
 const inputElements = document.getElementsByTagName("input");
-
 const tableBody = document.getElementById('table-body');
+const form = document.querySelector('.form-container');
+const showFormBtn = document.getElementById('show-form');
 let newTitle = document.getElementById('input-title');
 let newAuthor = document.getElementById('input-author');
 let newPages = document.getElementById('input-pages');
-let newIsRead =document.getElementsByName('input-read')
-let submitBtn = document.getElementById('add-new-book')
-let deleteBtn = document.querySelector('.fa-solid')
-const form = document.querySelector('.form-container');
-const showFormBtn = document.getElementById('show-form')
+let newIsRead =document.getElementsByName('input-read');
+let submitBtn = document.getElementById('add-new-book');
+let deleteBtn = document.querySelector('.fa-solid');
+let updateBtn = document.querySelector('.update-btn');
 let newBook = '';
 
 /* new book constructor */
@@ -25,10 +26,11 @@ function addBookToLibrary(book) {
   myLibrary.push(book);
     tableBody.innerHTML += `
                 <tr> 
-                  <td class='book-title'>${book.title} </td>
-                  <td class='book-author'>${book.author} </td>
-                  <td class='book-pages'>${book.pages} </td>
-                  <td class='book-isRead'>${book.isRead} </td>
+                  <td class='book-title'>${book.title}</td>
+                  <td class='book-author'>${book.author}</td>
+                  <td class='book-pages'>${book.pages}</td>
+                  <td class='book-isRead'>${book.isRead}</td>
+                  
                   <td class='delete'> <i class="fa-solid fa-trash"></i> </td>
                 </tr>`  
 }
@@ -58,12 +60,23 @@ submitBtn.addEventListener('click', (event) => {
   if (form.style.display === 'none') {
     form.style.display = 'flex'
     showFormBtn.textContent = "Hide Form"
-    showFormBtn.style.textAlign = 'center'
   } else {
     form.style.display = 'none'
     showFormBtn.textContent = "Show Form To Add Book"
   }
 } 
+
+/* update read status */
+tableBody.addEventListener('click', (event) => {
+  if(!event.target.classList.contains('book-isRead')) {
+    return
+  } 
+    if(event.target.closest('.book-isRead').textContent === 'no') {
+      event.target.closest('.book-isRead').textContent = 'yes'
+    } else {
+      event.target.closest('.book-isRead').textContent = 'no'
+    }
+})
 
 
 /* delete book record */
